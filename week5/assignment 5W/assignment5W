@@ -1,0 +1,106 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb 10 17:09:56 2018
+
+@author: Ryan
+"""
+import sys
+from PyQt5.QtWidgets import QWidget, QApplication, QColorDialog
+from PyQt5.QtGui import QPainter, QColor, QBrush
+from PyQt5.QtCore import Qt
+
+class colorDrag(QWidget):
+    def __init__(self):
+        
+        super(colorDrag, self).__init__()
+        
+        self.initUI()
+        
+        
+    def initUI(self):    
+                
+        self.color = QColor(Qt.red)
+        self.x = 0
+        self.y = 0
+        self.width = 50
+        self.height = 50
+        self.withIn = False
+        self.relativeX = 0
+        self.relativeY = 0
+         
+        self.setGeometry(400, 400, 600, 400)
+        
+        self.setWindowTitle('colorDrag')
+        
+        self.show()
+        
+        
+        
+    def paintEvent(self, e):
+
+        qp = QPainter()
+        
+        qp.begin(self)
+        
+        self.drawRectangle(qp)
+        
+        qp.end()
+        
+        
+        
+    def drawRectangle(self, qp):
+        
+        qp.setPen(self.color)
+        
+        qp.setBrush(self.color)
+        
+        qp.drawRect(self.x, self.y, self.width, self.height)
+ 
+        
+        
+    def mouseDoubleClickEvent(self,e):
+        print "Double Clicked"
+#        self.colorDialog(e)
+        self.color = QColorDialog.getColor(self.color, self)
+        self.update()
+        
+#    def colorDialog(self, e):
+#        dialog = QColorDialog(self.color, self)
+#        dialog.move(self.x-100, self.y-100)
+#        dialog.open()
+ 
+    def mouseMoveEvent(self, e):
+        
+        if self.withIn:
+            self.x = e.x() + self.relativeX
+            self.y = e.y() + self.relativeY
+            self.update()
+        else:
+            pass
+        
+    
+    def mousePressEvent(self, e):
+        print "Mouse pressed"
+        if e.x() > self.x and e.x() < self.x+self.width and e.y() > self.y and e.y() < self.y+self.height:
+            print "clicked with in"
+            self.withIn = True
+            self.relativeX = self.x - e.x()
+            self.relativeY = self.y - e.y()
+        else:
+            self.withIn = False
+        
+
+        
+    def mouseReleaseEvent(self, e):
+        print "Mouse released"
+        
+        
+        
+def main():
+    app = QApplication(sys.argv)
+    ui = colorDrag()
+    app.exec_()
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,25 @@
+Track A (for additional FFT practice)
+http://www.scipy-lectures.org/intro/scipy.html
+Exercise: Denoise moon landing image
+I suggest that you avoid the solution unless you absolutely need it. Here are some hints:
+1. visualize the FFT spectrum magnitude with imshow. The spectrum values vary quite a bit so you might want to use a logarithmic color scale (or take the log of the magnitudes and visualize that).
+2. Notice that there is a cloud of high magnitudes in the corners , and there are also high magnitudes arranged in a sort of grid. The high magnitudes in the grid are too regular to represent parts of the image that are supposed to be there; they must be the noise we want to get rid of. (If this doensn't make sense, let's talk about it in office hours). You'll want to just keep the corners and zero everything else. 
+3. Play around with the size of the corners that you keep until you get something that looks like: 
+http://www.scipy-lectures.org/_images/sphx_glr_plot_fft_image_denoise_004.png
+(I will probably add this to the preparation next year. I didn't have you do it this year because last time I tried it I didn't think that my solution was correct and there was no provided solution. Now that the provided solution is available, I see that my solution was correct; it's just that the final result doesn't look terrific anyway!)
+
+
+Track B (Since the website for last year's Track B exam option 3 no longer allows robots, and for more Alexa practice)
+
+Write an Alexa skill to respond to questions about How I Met Your Mother (or your favorite TV show). Where should the data come from? Before writing the skill, scrape the Wikipedia episode list, e.g.:
+https://en.wikipedia.org/wiki/List_of_How_I_Met_Your_Mother_episodes
+Copy and paste a dictionary (organized as you please) containing the results into your Alexa skill.
+
+For instance, consider how you could respond to questions like:
+What is the name of the twelfth episode of season 5?
+How many episodes are in season 2?
+When did "Duel Citizenship" air?
+How many episodes had more than 10 million viewers?
+Which episodes did Matt Kuhn write?
+
+If you have your crawler visit any links (to get plot information, for instance), you should be sure to slow your spider down by enabling AutoThrottle (see documentation). Always obey https://en.wikipedia.org/robots.txt

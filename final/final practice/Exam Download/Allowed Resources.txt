@@ -1,0 +1,39 @@
+Exam Format
+There are two parts to the exam. Part I is required and Part II is optional. Both will be completed on PIC machines. (No laptops allowed.)
+Part I tests Track A/B material from the latter part of the course. For this part, you will get to choose one from six options (three corresponding with each track). Typically, these prompts ask you to complete one relatively long, multi-part objective. 
+If you are not confident about your performance on Part I, you may complete one or more options from Part II, which test common material from the first part of the course. Typically, these options are shorter than those in Part I or are composed of several unrelated, very short questions.
+Some of these options will require the use of Jupyter Notebook. You are allowed to prepare your solutions in whatever program you wish, but you might be required to submit your solution in a Jupyter Notebook with specific formatting instructions. 
+A weighted average of your scores for Part I and Part II will be used to calculate your final exam score.
+
+Allowed Resources
+I intend for the exam to assess how you would typically perform in a real-world problem solving scenario, which is why you will have access to many resources. The Internet is a big place, so sometimes in practice you can even find a relatively complete solution that you can copy, paste, and hack to meet your needs. This is not the case in general, however, so it would not be a realistic simulation if you could access partial or complete solutions online during the exam. While I have done my best to generate original problems, I also try to make them simple and interesting, which makes it more likely that they have been considered before. Therefore, I must place some restrictions on Internet use to eliminate the possibility of finding unrealistic help online.
+
+The following are allowed resources. If there is a resource that is not on this list that you think should be, let me know. (This document may be updated without notice before the exam.) If you get completely stuck during the exam and think you need another reference, ask and I'll consider the request. 
+
+Any of your work for the course 
+(Note: I suppose this includes course notes, so these are not really limited as I might have said before.)
+Any provided course materials
+Any official documentation from python.org
+Any official class/function references for the modules we have used 
+(Note: this is different from official example code, which is only allowed if specifically mentioned below.)
+
+The following tutorials/guides/examples are also allowed.
+Tutorials Point: Python Exceptions (http://www.tutorialspoint.com/python/python_exceptions.htm)
+Tutorials Point: Object Oriented Python (http://www.tutorialspoint.com/python/python_classes_objects.htm)
+A Guide to Python's Magic Methods (a PDF will be included in exam materials)		
+Python Practice Book: Iterators (http://anandology.com/python-practice-book/iterators.html)
+Tutorials Point: Python IO (http://www.tutorialspoint.com/python/python_files_io.htm)
+Python for Beginners: CSV Module (http://www.pythonforbeginners.com/systems-programming/using-the-csv-module-in-python/)
+RegexOne and Pythex (http://regexone.com/references/python, http://pythex.org/)
+Plotly User Guide (https://plot.ly/python/user-guide/)
+PyQt4 Tutorial (http://zetcode.com/gui/pyqt4/) – direct links from this page are OK, too
+Getting Started with PyQt and Qt Designer (https://nikolak.com/pyqt-qt-designer-getting-started/)
+SymPy Tutorial (http://docs.sympy.org/latest/tutorial/intro.html#what-is-symbolic-computation)
+SciPy Lectures (http://www.scipy-lectures.org/intro/index.html)
+OpenCV Tutorials (http://docs.opencv.org/3.0-beta/doc/py_tutorials/py_tutorials.html)
+Scrapy Tutorial (http://doc.scrapy.org/en/1.0/intro/tutorial.html)
+Tutorials Point: Python Networking (https://www.tutorialspoint.com/python/python_networking.htm)
+Tutorials Point: Python Multithreading (https://www.tutorialspoint.com/python/python_multithreading.htm)
+scikit-learn Tutorials (http://scikit-learn.org/stable/tutorial/index.html)
+
+Please do not attempt to access anything besides these allowed resources without permission. Know that I am fortunate to have very good eyesight, I am very familiar with the allowed materials, and your screen will be visible from the comfort of my seat.

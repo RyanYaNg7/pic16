@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Feb 13 16:01:52 2018
+
+@author: Ryan
+"""
+
+import sys
+import numpy
+from sympy import *
+
+T, T0, To, w, t, w0, P, Ie, temp = symbols('T, T0, To, w, t, w0, P, Ie, temp')
+
+w = Function('w')
+e11 = T/Ie - Derivative(w(t), t)
+
+
+#this is also T
+e12 = T0*(1-w(t)*T0/4/P)
+
+e13 = e11.subs(T, e12)
+
+#this is also w(t)
+e14 = dsolve(e13,w(t)).rhs
+
+C1 = symbols('C1')
+
+e14 =  e14.subs(C1, solve(e14.subs(t, 0), C1)[0])
+
+J, tf = symbols('J tf')
+
+J = integrate(e12.subs(w(t), e14), (t, 0, tf))
+
+To = solve(diff(J, T0), T0)[3]

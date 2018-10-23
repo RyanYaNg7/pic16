@@ -1,0 +1,50 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar  4 16:56:07 2018
+
+@author: Ryan
+"""
+
+import numpy as np
+from scipy.optimize import minimize
+from scipy.integrate import trapz
+import matplotlib.pyplot as plt
+from scipy.ndimage.interpolation import shift
+
+N = 50      #number of points
+P = np.pi/2     #perimeter
+R = P/np.pi*2       #radius
+x = np.linspace(0., R, N)    #ideal x
+y = ([R**2]*N - x**2)**0.5      #ideal y
+#plt.plot(x, y)
+z0 = np.append(np.array(x[-1]), y[:-1])#my perfect guess
+z0 = np.random.ranf(50) * P
+def z2xy(z):
+    xs = np.linspace(0., z[0], N)
+    ys = np.append(z[1:], 0.)
+    return (xs, ys)
+
+def obj(z):
+    xs, ys = z2xy(z)
+    return -trapz(ys, xs)
+
+def con(z):
+    xs, ys = z2xy(z)
+    line1 = np.array([xs, ys]).T
+    line2 = line1.copy()
+    line2[1:] = line2[:-1]
+    l = np.linalg.norm(line1-line2, axis=1).sum()
+    return l-P
+    
+bounds = [(0, P) for i in range(0,50)]
+
+dic = {"type": "eq", "fun": con}
+
+min_args = minimize(fun=obj, x0=z0, bounds=bounds, constraints=dic)
+print min_args
+
+x1, y1 = z2xy(z0)
+plt.plot(x1, y1)
+x2, y2 = z2xy(min_args.x)
+plt.plot(x2, y2)

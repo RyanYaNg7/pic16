@@ -1,0 +1,46 @@
+Some URLs:
+https://keep.google.com/
+http://pythex.org/
+
+The Anatomy of a URL (from http://www.gpc.edu/webpublishing/url.html)
+
+A URL (Uniform Resource Locator) is the "address" of a particular document on the Internet. To access a particular document on a web server, the URL is typed into the address bar of a browser. A browser is a device or desktop software application that enables viewing of rendered HTML (Hyper Text Markup Language). The most widely used browsers are Microsoft's Internet Explorer, Mozilla's Firefox, Google's Chrome, and Apple's Safari.
+
+The URL consist of a protocol, host, domain name (which includes domain and subdomain), and optionally a directory path, and file name (with or without extension).
+
+The URL construction resembles this:
+protocol://host.subdomain.topdomain/dir1/dir2/filename.ext
+
+Example of www host:
+
+http://www.gpc.edu/Campus_Maps/index.html
+
+  The protocol is http (Hypertext Transfer Protocol)
+  The host name is www
+  The domain name address is gpc.edu
+  There is no subdomain in this example.
+  The top-level domain is edu
+  The first directory is Campus_Maps
+  The file name is index, extension is html (common GPC extensions include htm, html, php). Most often, the index file name is not shown since it is the default file that a server retrieves when a directory with no file name is specified.
+Example of a GPC virtual host (or subdomain depending on it's configuration):
+
+https://giving.gpc.edu/townsend
+
+  The protocol is https (Secure Hypertext Transfer Protocol) used for an encrypted connection
+  The host name or subdomain is giving
+  The domain name address is gpc.edu
+  The top-level domain is edu
+  The first directory is townsend
+  There is no file name in this example
+Example of a subdomain with www host :
+
+Avoid this construct if possible -- it can be confusing to the user and goes against the 3-segmented (host.subdomain.topdomain) URL convention.
+https://www.giving.gpc.edu/give/today/form.doc
+
+  The protocol is https (Secure Hypertext Transfer Protocol) used for an encrypted connection (on pages that obtain user input of sensitive information)
+  The host name is www
+  The subdomain is giving
+  The domain name is gpc.edu
+  The top-level domain is edu
+  The first directory is give, the second directory is today
+  The file name is form.doc

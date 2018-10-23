@@ -1,0 +1,63 @@
+Intent Schema:
+{
+  "intents": [
+    {
+      "slots": [
+        {
+          "name": "low",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "high",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "RandomNumberIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "a",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "b",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "op",
+          "type": "operation"
+        }
+      ],
+      "intent": "DoArithmeticIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "num",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "op",
+          "type": "operation"
+        }
+      ],
+      "intent": "AnswerIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
+
+Custom Slot Types:
+Type: operation
+Values: add, multiply
+
+Sample Utterances:
+RandomNumberIntent give me a random number
+RandomNumberIntent give me a random number
+RandomNumberIntent give me a random number between {low} and {high}
+RandomNumberIntent a random number between {low} and {high}
+DoArithmeticIntent {op} {a} and {b}
+AnswerIntent {num}
